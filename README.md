@@ -1,9 +1,21 @@
-PracticeRepro1
+How to Generate Private and Public Key
 ==============
+$ ssh-keygen -t rsa
 
-This repository is for practice and training purpose.I added some new feature to this project.
-
-Added New Comments
+Change PassPhrase with changing key
 ==================
-https://github.com/ProfRosario/PracticeRepro1.git
+If you don't like you passphrase you can change it without changing the private and public key
+
+$ ssh-keygen -p
+
+The SSH Agent
+============
+$ ssh-agent $SHELL
+$ ssh-add
+Enter passphrase for /home/you/.ssh/id_dsa:********** <--type your passphrase
+Identify added: /home/you/.ssh/id_dsa
+
+$ git clone git@github.com:github_username/MyRepro.git
+
+Github will not ask you for you username or password any more
 
