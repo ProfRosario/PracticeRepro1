@@ -1,55 +1,68 @@
 How to Generate Private and Public Key
 =======================================
-$ ssh-keygen -t rsa       <-- this tell ssh to generate a key rsa type key. 
+<code>$ ssh-keygen -t rsa</code>
 
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/users/username/.ssh/id_rsa): <--don't add anything here.
+This command tell ssh to generate a rsa type key. The following message will display:
 
-/c/users/username/.ssh/id_rsa already exists.
+<code>Generating public/private rsa key pair.</code>
+<code>Enter file in which to save the key (/c/users/username/.ssh/id_rsa): </code>
 
-Overwrite (y/n) y  <--- type y if you want to delete the old key.
+If the file path is conrrect, don't add anything just press Enter. The following message will appear:
 
-Enter passphrase (empty for no passphrase):xxxxxxxxxxxxxxxxxx
+<code>/c/users/username/.ssh/id_rsa already exists.</code>
+<code>Overwrite (y/n)</code>
 
+Type <code>y</code> and press Enter if you want to delete the old key. The following message will appear:
 
-Enter same passphrase again:xxxxxxxxxxxxxxxxx
-Your identification has been saved in id_rsa.
+<code>Enter passphrase (empty for no passphrase):</code>
 
-Your public Key has been saved in id_rsa.pub.
+Enter a passphrase you can remember (not too complicated) and press Enter. The following message will appear:
 
-The key finger print is:
-f3:15:57:.....................:db username@domain.com  <---- note this is not a key but finger print. You should try to remember its appearance or image.
+<code>Enter same passphrase again:</code>
 
-Two keys will be generated. The private key you keep on you main computer and the public key (with the .pub extension) you store it at the remote host (raspberry pi). The private key should always be stored on your main computer.
+Retype the passphrase again and press Enter. The following message will appear:
+
+<code>Your identification has been saved in id_rsa.</code>
+<code>Your public Key has been saved in id_rsa.pub.</code>
+<code>The key finger print is:</code>
+<code>f3:15:57:.....................:db username@domain.com </code>
+
+Try to remember the finger print image (appearance). You don't need to memorize the actual message.
+Note, two keys will be generated, a public key and a private key. The private key should be stored on your main computer and the public key (with the .pub extension) should be stored at the remote host (example. raspberry pi, github,...,etc). 
 
 How to change the passphrase.
 ==============================
 If you made a mistake and don't like your old passphrase you can change it without changing the private and public keys. Type the following command:
 
-$ ssh-keygen -p  <--- by add -p you're requesting to change the passphrase. Don't worry this doesn't change the key.
+<code>$ ssh-keygen -p </code>  
+
+The <code>-p</code> is requesting to change the passphrase only. Don't worry this doesn't change the key.
 
 Start the SSH Agent
 ===================
-$ ssh-agent $SHELL
-$ ssh-add
-Enter passphrase for /home/you/.ssh/id_rsa:xxxxxxxxxxxxxx     <--type your passphrase here.
-Identify added: /home/you/.ssh/id_rsa
+<code>$ ssh-agent $SHELL</code>
+<code>$ ssh-add</code>
+<code>Enter passphrase for /home/you/.ssh/id_rsa:</code>
+<code>Identify added: /home/you/.ssh/id_rsa</code>
 
 Setup the Raspberry Pi
 ==================
-Copy your public key to your ~/.ssh folder. In the .ssh folder you should see a file named authorized_keys. If you don't see it, type the following command
+Copy your public ssh key to your <code> ~/.ssh</code> folder. In the .ssh folder, you should see a text file named <code>authorized_keys</code>. If you don't see it, type the following command
 
-$ touch authorized_keys   <--- this just creates a blank file with nothing inside.
+<code>$ touch authorized_keys</code>
 
-Next use the following command to append the public key to your authorized_keys file on the Pi, sending it over SSH:
+<code>touch</code> is a Linux command that creates a blank text file with nothing inside.
 
-cat ~/.ssh/id_rsa.pub | ssh <USERNAME>@<IP-ADDRESS> 'cat >> .ssh/authorized_keys'
+Next type the following command to append the public key to your authorized_keys file on the Pi, sending it over SSH:
 
-If you typed everything correct, next time log on with ssh-agent you will not have to authenticate with your password.
+<code>cat ~/.ssh/id_rsa.pub | ssh <USERNAME>@<IP-ADDRESS> 'cat >> .ssh/authorized_keys'</code>
+
+If you typed everything correctly, next time you run the ssh-agent you will not have to authenticate with your password.
 
 Transfering files without username or password
+==============================================
 
-$ git clone git@github.com:github_username/MyRepro.git
+<code>$ git clone git@github.com:github_username/MyRepro.git</code>
 
 By this point, Github shouldn't not be asking you for your username or password any more. If GitHub does, you probability made a mistake somewhere in the setup.
 
