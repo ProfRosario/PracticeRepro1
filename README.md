@@ -1,15 +1,18 @@
 How to Generate Private and Public Key
 =======================================
+
 <code>$ ssh-keygen -t rsa</code>
 
 This command tell ssh to generate a rsa type key. The following message will display:
 
 <code>Generating public/private rsa key pair.</code>
+
 <code>Enter file in which to save the key (/c/users/username/.ssh/id_rsa): </code>
 
 If the file path is conrrect, don't add anything just press Enter. The following message will appear:
 
 <code>/c/users/username/.ssh/id_rsa already exists.</code>
+
 <code>Overwrite (y/n)</code>
 
 Type <code>y</code> and press Enter if you want to delete the old key. The following message will appear:
@@ -23,8 +26,11 @@ Enter a passphrase you can remember (not too complicated) and press Enter. The f
 Retype the passphrase again and press Enter. The following message will appear:
 
 <code>Your identification has been saved in id_rsa.</code>
+
 <code>Your public Key has been saved in id_rsa.pub.</code>
+
 <code>The key finger print is:</code>
+
 <code>f3:15:57:.....................:db username@domain.com </code>
 
 Try to remember the finger print image (appearance). You don't need to memorize the actual message.
@@ -40,9 +46,13 @@ The <code>-p</code> is requesting to change the passphrase only. Don't worry thi
 
 Start the SSH Agent
 ===================
+
 <code>$ ssh-agent $SHELL</code>
+
 <code>$ ssh-add</code>
+
 <code>Enter passphrase for /home/you/.ssh/id_rsa:</code>
+
 <code>Identify added: /home/you/.ssh/id_rsa</code>
 
 Setup the Raspberry Pi
