@@ -9,21 +9,21 @@ This command tell ssh to generate a rsa type key. The following message will dis
 
 <code>Enter file in which to save the key (/c/users/username/.ssh/id_rsa): </code>
 
-If the file path is conrrect, don't add anything just press Enter. The following message will appear:
+If the file path is correct, do not type any informatin just press Enter. The following message will appear:
 
 <code>/c/users/username/.ssh/id_rsa already exists.</code>
 
 <code>Overwrite (y/n)</code>
 
-Type <code>y</code> and press Enter if you want to delete the old key. The following message will appear:
+If you want to delete the old key, type <code>y</code> and press <code>Enter</code>. Otherwise type <code>n</code>. The following message will appear:
 
 <code>Enter passphrase (empty for no passphrase):</code>
 
-Enter a passphrase you can remember (not too complicated) and press Enter. The following message will appear:
+Type a passphrase you can remember (not too complicated) and press <code>Enter</code>. The following message will appear:
 
 <code>Enter same passphrase again:</code>
 
-Retype the passphrase again and press Enter. The following message will appear:
+Retype the passphrase again and press <code>Enter<code>. The following message will appear:
 
 <code>Your identification has been saved in id_rsa.</code>
 
@@ -38,18 +38,23 @@ Note, two keys will be generated, a public key and a private key. The private ke
 
 How to change the passphrase.
 ==============================
-If you made a mistake and don't like your old passphrase you can change it without changing the private and public keys. Type the following command:
+If you made a mistake or don't like your old passphrase, you can change it without changing the private and public keys. Type the following command:
 
 <code>$ ssh-keygen -p </code>  
 
 The <code>-p</code> is requesting to change the passphrase only. Don't worry this doesn't change the key.
 
+
 Start the SSH Agent
 ===================
+
+The the following commands:
 
 <code>$ ssh-agent $SHELL</code>
 
 <code>$ ssh-add</code>
+
+The following message will appear:
 
 <code>Enter passphrase for /home/you/.ssh/id_rsa:</code>
 
