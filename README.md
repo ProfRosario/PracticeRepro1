@@ -1,7 +1,7 @@
 How to Generate Private and Public Key
 =======================================
 
-<code>$ ssh-keygen -t rsa</code>
+  <code>$ ssh-keygen -t rsa</code>
 
 This command tell ssh to generate a rsa type key. The following message will display:
 
