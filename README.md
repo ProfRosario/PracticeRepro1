@@ -79,5 +79,5 @@ Transfering files without username or password
 
 > <code>$ git clone git@github.com:github_username/MyRepro.git</code>
 
-By this point, Github shouldn't not be asking you for your username or password any more. If GitHub does, you probability made a mistake somewhere in the setup.
+If you set everything correctly, Github should not asking you for your username or password any more when cloning. If GitHub does, you probability made a mistake somewhere in the setup.
 
