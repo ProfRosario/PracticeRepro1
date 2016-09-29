@@ -1,21 +1,23 @@
-How to Generate Private and Public Key
+How to Generate Private and Public SSH Key
 =======================================
+
+To create private and public SSH keys, key the following command:
 
 > <code>$ ssh-keygen -t rsa</code>
 
-This command tell ssh to generate a rsa type key. The following message will display:
+This command tells ssh to generate a rsa type key. The following message will display:
 
 <code>Generating public/private rsa key pair.</code>
 
 <code>Enter file in which to save the key (/c/users/username/.ssh/id_rsa): </code>
 
-If the file path is correct, do not type any informatin just press Enter. The following message will appear:
+If the file path is correct, do not type any informatin just press <code>Enter</code>. The following message will appear:
 
 > <code>/c/users/username/.ssh/id_rsa already exists.</code>
 
 > <code>Overwrite (y/n)</code>
 
-If you want to delete the old key, type <code>y</code> and press <code>Enter</code>. Otherwise type <code>n</code>. The following message will appear:
+If you want to delete the old key, type <code>y</code> and press <code>Enter</code>. Otherwise type <code>n</code>. The following message will appear if you typed <code>y</code>:
 
 > <code>Enter passphrase (empty for no passphrase):</code>
 
@@ -23,7 +25,7 @@ Type a passphrase you can remember (not too complicated) and press <code>Enter</
 
 > <code>Enter same passphrase again:</code>
 
-Retype the passphrase again and press <code>Enter<code>. The following message will appear:
+Retype the passphrase again and press <code>Enter<code>. The following messages will appear:
 
 > <code>Your identification has been saved in id_rsa.</code>
 
@@ -34,7 +36,7 @@ Retype the passphrase again and press <code>Enter<code>. The following message w
 > <code>f3:15:57:.....................:db username@domain.com </code>
 
 Try to remember the finger print image (appearance). You don't need to memorize the actual message.
-Note, two keys will be generated, a public key and a private key. The private key should be stored on your main computer and the public key (with the .pub extension) should be stored at the remote host (example. raspberry pi, github,...,etc). 
+Note, two keys will be generated, a public key and a private key. The private key should be stored on your main computer and the public key (with the .pub extension) should be stored at the remote host (example: raspberry pi, github,...,etc). 
 
 How to change the passphrase.
 ==============================
