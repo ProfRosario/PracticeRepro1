@@ -1,7 +1,7 @@
 How to Generate Private and Public SSH Key
 =======================================
 
-To create private and public SSH keys, key the following command:
+To create private and public SSH keys, type the following command:
 
 > <code>$ ssh-keygen -t rsa</code>
 
